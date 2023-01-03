@@ -19,7 +19,9 @@ class UniqueList(list):
 
     def __sub__(self, other) -> List:
         return [x for x in self if x not in other]
-
+    
+    def __hash__(self):
+        return hash(tuple(self)) 
 
 def flatten_list(input_list: List) -> List[str]:
     """
